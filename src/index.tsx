@@ -63,7 +63,6 @@ function SearchHit({ subject }: SearchHitProps) {
   return (
     <List.Item
       key={subject}
-      icon="list-icon.png"
       title={title}
       subtitle={description || ""}
       accessoryTitle={klassTitle}

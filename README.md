@@ -1,6 +1,14 @@
 # Atomic-Raycast
 
-Plugin for Raycast to search your Atomic-Server.
+Plugin for Raycast to search your [Atomic Server](https://github.com/joepio/atomic-data-rust/).
+
+Features
+
+- [x] Use the `/search` endpoint for an Atomic Server
+- [x] Titles, descriptions and class names are previewed
+- [x] Markdown of descriptions is rendered
+- [x] Open in browser action
+- [ ] Set a custom Atomic Server
 
 ## Installing
 
