@@ -12,6 +12,12 @@
       "title": "Search Atomic Data resources",
       "description": "Search inside your Atomic-Server data",
       "mode": "view"
+    },
+    {
+      "name": "settingsForm",
+      "title": "Atomic Data Settings",
+      "description": "Set your server and key",
+      "mode": "view"
     }
   ],
   "dependencies": {

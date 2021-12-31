@@ -1,4 +1,4 @@
-import { ActionPanel, Detail, List, OpenInBrowserAction, PushAction } from "@raycast/api";
+import { ActionPanel, CopyToClipboardAction, Detail, List, OpenInBrowserAction, PushAction } from "@raycast/api";
 import { useServerSearch, StoreContext, useTitle, useResource, useString } from '@tomic/react';
 import { Store, urls } from '@tomic/lib';
 import React from "react";
@@ -68,7 +68,17 @@ function SearchHit({ subject }: SearchHitProps) {
       accessoryTitle={klassTitle}
       actions={
         <ActionPanel>
-          <PushAction title="Show Details" target={<Detail markdown={md} actions={<ActionPanel><OpenInBrowserAction title="Open in browser" url={subject} /></ActionPanel>}/>} />
+          <PushAction
+            title="Show Details"
+            target={
+              <Detail markdown={md} actions={
+                <ActionPanel>
+                  <OpenInBrowserAction title="Open in browser" url={subject} />
+                </ActionPanel>
+              } />
+            }
+          />
+          <CopyToClipboardAction content={subject} title="Copy URL to clipboard" />
           <OpenInBrowserAction title="Open in browser" url={subject} />
         </ActionPanel>
       }
