@@ -1,5 +1,7 @@
 # Atomic-Raycast
 
+_Note: The most recent version of this code lives in the [`raycast/extensions` repo](https://github.com/raycast/extensions/).
+
 Plugin for Raycast to search your [Atomic Server](https://github.com/joepio/atomic-data-rust/).
 
 Features
