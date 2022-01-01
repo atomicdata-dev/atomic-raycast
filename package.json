@@ -9,14 +9,9 @@
   "commands": [
     {
       "name": "index",
-      "title": "Search Atomic Data resources",
-      "description": "Search inside your Atomic-Server data",
-      "mode": "view"
-    },
-    {
-      "name": "settingsForm",
-      "title": "Atomic Data Settings",
-      "description": "Set your server and key",
+      "title": "Atomic Search",
+      "subtitle": "Find things stored in your Atomic Server",
+      "description": "Search inside your Atomic Server data",
       "mode": "view"
     }
   ],
@@ -40,5 +35,16 @@
     "build": "ray build -e dist",
     "dev": "ray develop",
     "lint": "ray lint"
-  }
+  },
+  "preferences": [
+    {
+      "name": "server",
+      "type": "textfield",
+      "required": true,
+      "title": "Atomic Server",
+      "description": "The URL of the server to connect to.",
+      "placeholder": "e.g. https://atomicdata.dev",
+      "default": "https://atomicdata.dev"
+    }
+  ]
 }

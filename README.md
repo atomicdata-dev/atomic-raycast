@@ -8,7 +8,7 @@ Features
 - [x] Titles, descriptions and class names are previewed
 - [x] Markdown of descriptions is rendered
 - [x] Open in browser action
-- [x] Set a custom Atomic Server in settings page
+- [x] Set your server on startup, save as preference
 - [ ] Other cool features? Open an issue or PR!
 
 ## Installing

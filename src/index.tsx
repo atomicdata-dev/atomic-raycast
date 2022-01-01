@@ -1,12 +1,17 @@
-import { ActionPanel, CopyToClipboardAction, Detail, List, OpenInBrowserAction, PushAction } from "@raycast/api";
-import { useServerSearch, StoreContext, useTitle, useResource, useString } from '@tomic/react';
+import { ActionPanel, CopyToClipboardAction, Detail, getPreferenceValues, List, OpenInBrowserAction, Preferences, PushAction } from "@raycast/api";
+import { useServerSearch, StoreContext, useTitle, useResource, useString, useMarkdown } from '@tomic/react';
 import { Store, urls } from '@tomic/lib';
 import React from "react";
 
+const preferences: Preferences = getPreferenceValues();
+
 const store = new Store({
-  // By setting a Base URL, we tell the client where to send Commits to.
-  serverUrl: "https://atomicdata.dev"
+  serverUrl: preferences.server as unknown as string,
 });
+
+/** Fetch all the Properties and Classes - this helps speed up the app. */
+store.fetchResource(urls.properties.getAll);
+store.fetchResource(urls.classes.getAll);
 
 export default function Command() {
 
@@ -18,7 +23,7 @@ export default function Command() {
 }
 
 function Content() {
-  const [query, setQuery] = React.useState("");
+  const [query, setQuery] = React.useState<string>("");
   const { results, loading, error } = useServerSearch(query, {
     include: true,
   });
@@ -35,7 +40,7 @@ function Content() {
       onSearchTextChange={onSearchTextChange}
     >
       {error && <List.Item title={error.message} />}
-      {query.length > 0 && results && results.map(subject => (
+      {results && results.map(subject => (
         <SearchHit
           subject={subject}
           key={subject}
@@ -58,7 +63,7 @@ function SearchHit({ subject }: SearchHitProps) {
   const klass = useResource(resource.getClasses()[0]);
   const klassTitle = useTitle(klass);
 
-  const md = `# ${title} \n\n ${description}`;
+  const md = useMarkdown(resource);
 
   return (
     <List.Item
