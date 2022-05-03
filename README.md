@@ -17,7 +17,8 @@ https://user-images.githubusercontent.com/2183313/147857901-47da11f1-75c6-4d84-b
 
 ## Installing
 
-_Note: this extension is beta and not yet available in the Raycast store_
+- Install from the [Raycast store](https://www.raycast.com/joepio/atomic) website, or...
+- Install from the Raycast app, by typing `store`, `enter` and searching for `atomic`
 
 ## Running locally
 
