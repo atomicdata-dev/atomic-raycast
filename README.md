@@ -13,6 +13,8 @@ Features
 - [x] Set your server on startup, save as preference
 - [ ] Other cool features? Open an issue or PR!
 
+https://user-images.githubusercontent.com/2183313/147857901-47da11f1-75c6-4d84-b5c1-93c44253517d.mov
+
 ## Installing
 
 _Note: this extension is beta and not yet available in the Raycast store_
